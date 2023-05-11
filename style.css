@@ -1,7 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=MonteCarlo&display=swap");
 
 :root {
   --fontFamily: "Karla", sans-serif;
+  --handwritingFamily: "MonteCarlo", cursive;
   --primaryColor: #25003a;
   --primaryDark: #0d001b;
   --primaryLight: #570072;
@@ -15,9 +16,9 @@
   --primaryWhite: #e9e9e9;
   --primaryBlack: #000007;
   --transitionTime: 0.45s ease-in-out;
-  --textBgColor: rgba(180, 63, 247, 0.034);
-  --sqauresColor: rgba(132, 0, 172, 0.281);
-  --circleColor: rgba(132, 0, 172, 0.438);
+  --sqauresColor: #8400ac48;
+  --circleColor: #8400ac70;
+  --veryLightWhite: #5a5959;
 }
 
 * {
@@ -79,7 +80,6 @@ button {
 .on__scroll {
   padding-bottom: 1rem;
   box-shadow: #00000033 0 10px 15px 0;
-  background-image: var(--navBg);
   backdrop-filter: blur(10px);
 }
 
@@ -287,7 +287,6 @@ button {
 .section {
   padding: 4rem 0;
   width: 100%;
-  border-bottom: 1px solid var(--sqauresColor);
 }
 
 .about__section {
@@ -301,6 +300,7 @@ button {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  backdrop-filter: blur(12px);
 }
 
 .section__in {
@@ -309,61 +309,87 @@ button {
   z-index: 1;
 }
 
-.section__in--heading {
+.about__imgbox {
   text-align: center;
-  margin-bottom: 4rem;
 }
 
-.section__in--heading span {
-  font-size: 1.45rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: var(--primaryWhite);
-  padding: 0.45rem 2.55rem;
-  position: relative;
-  z-index: 1;
+.about__imgbox--img {
+  object-fit: fill;
+  user-select: none;
 }
 
-.section__in--heading span::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(
-    to right,
-    rgb(198, 128, 255),
-    rgba(111, 42, 190, 0.712),
-    rgba(100, 0, 146, 0.877)
-  );
-  clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
-  z-index: -1;
+.about__imgbox--img img {
+  width: 250px;
+  border: 2px solid var(--veryLightWhite);
+  border-radius: 50%;
+  aspect-ratio: 1;
+  background-color: var(--primaryDark);
+  transition: border 0.45s ease-in-out;
 }
 
-/* ABOUT SECTION STYLE */
-
-.about__text {
-  padding: 0.5rem;
+.about__imgbox--img img:hover {
+  border: 2px solid var(--primaryWhite);
 }
 
-.about__text--me {
-  margin-bottom: 2rem;
+.about__titlebox {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
 }
 
-.about__text--me span {
+.about__titlebox--title span {
   font-size: 2rem;
-  color: var(--primaryColor);
-  padding-right: 2rem;
-  background-color: var(--fullWhite);
+  font-family: var(--handwritingFamily);
+  color: var(--primaryWhite);
 }
 
-.about__text--me p {
-  font-size: 1.2rem;
-  color: var(--primaryLight);
-  word-spacing: 1px;
-  font-weight: 400;
-  background-color: var(--textBgColor);
+.about__titlebox--title span > h2 {
+  font-size: 4rem;
+  line-height: 1;
+  font-family: var(--fontFamily);
+}
+
+.title {
+  position: relative;
+}
+
+.title::after {
+  position: absolute;
+  content: "";
+  bottom: 3px;
+  right: 0;
+  width: 87%;
+  height: 2px;
+  border-radius: 3rem;
+  background-color: var(--primaryWhite);
+}
+
+.about__abouttext {
+  padding: 1rem 10rem;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.about__abouttext p {
+  font-size: 1.15rem;
+  color: var(--primaryWhite);
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+/* SKILL SECTION */
+
+.skill__section {
+  background-image: linear-gradient(to right, #150025e3, #18031d, #0e000e);
+}
+
+.skill__title {
+  text-align: center;
+}
+
+.skill__title h3 {
+  font-size: 1.25rem;
+  color: var(--veryLightWhite);
 }
 
 /* MEDIA QUERY */
@@ -390,6 +416,11 @@ button {
   .navbar__in--icon {
     display: flex;
   }
+
+  .about__abouttext {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 700px) {
@@ -410,7 +441,11 @@ button {
     padding: 1rem;
   }
 
-  .about__text--me p {
-    font-size: 1rem;
+  .about__titlebox-title span > h2 {
+    font-size: 2.8rem;
+  }
+
+  .about__abouttext {
+    padding: 1rem 0;
   }
 }
