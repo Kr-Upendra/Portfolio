@@ -429,6 +429,10 @@ textarea {
   margin-bottom: 2rem;
 }
 
+.langcontainer {
+  padding-left: 2rem;
+}
+
 .skill__container--boxes-title h4 {
   color: var(--primaryWhite);
   text-transform: uppercase;
@@ -457,6 +461,7 @@ textarea {
   position: relative;
   z-index: 10;
   transition: color 0.45s ease-in-out;
+  cursor: default;
 }
 
 .skill__names:hover {
@@ -831,6 +836,10 @@ textarea {
 
   .contact__frombox--form {
     width: 65%;
+  }
+
+  .langcontainer {
+    padding-left: 0.5rem;
   }
 }
 
