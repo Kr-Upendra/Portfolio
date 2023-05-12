@@ -1,8 +1,7 @@
 const menuIcon = document.getElementById("menuicon");
 const navbar = document.querySelector(".navbar__in");
 const navigation = document.getElementById("navigation");
-const header = document.querySelector(".header");
-const sectionIn = document.querySelector(".section__in");
+const form = document.querySelector(".form");
 
 menuIcon.addEventListener("click", () => {
   const menuValue = menuIcon.getAttribute("aria-hidden");
@@ -19,4 +18,11 @@ window.addEventListener("scroll", () => {
   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)
     navbar.classList.add("on__scroll");
   else navbar.classList.remove("on__scroll");
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert(
+    "This functionality is not implemented Yet,\nPlease use email instead! Thanks."
+  );
 });
