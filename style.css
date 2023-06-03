@@ -94,6 +94,7 @@ textarea {
 
 .navbar__in--logo:hover {
   text-decoration: underline;
+  color: var(--fullWhite);
 }
 
 .navbar__in--navigation[aria-hidden="true"] {
