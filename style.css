@@ -733,6 +733,19 @@ textarea {
   color: var(--fullWhite);
 }
 
+/* OVERLAY SECTION */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.212);
+  z-index: 10;
+  display: none;
+  transition: all 0.45s ease-in-out;
+}
+
 /* MEDIA QUERY */
 
 @media (max-width: 900px) {
