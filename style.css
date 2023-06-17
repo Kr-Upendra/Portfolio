@@ -1,8 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=MonteCarlo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=MonteCarlo&family=Fresca&display=swap");
 
 :root {
   --fontFamily: "Karla", sans-serif;
   --handwritingFamily: "MonteCarlo", cursive;
+  --nameFont: "Fresca", sans-serif;
   --primaryColor: #25003a;
   --primaryDark: #0d001b;
   --primaryLight: #570072;
@@ -16,8 +17,8 @@
   --primaryWhite: #c2bfbf;
   --primaryBlack: #000007;
   --transitionTime: 0.45s ease-in-out;
-  --sqauresColor: #8400ac48;
-  --circleColor: #8400ac70;
+  --sqauresColor: #28003567;
+  --circleColor: #2f003d70;
   --veryLightWhite: #5a5959;
 }
 
@@ -235,12 +236,13 @@ textarea {
 }
 
 .header__content--heading h3 {
-  font-size: 5rem;
+  font-size: 7rem;
   line-height: 1;
-  font-weight: 900;
   -webkit-text-stroke: var(--fullWhite);
   -webkit-text-stroke-width: 1px;
   color: transparent;
+  font-family: var(--nameFont);
+  letter-spacing: 2px;
 }
 
 .header__content--heading h5 {
