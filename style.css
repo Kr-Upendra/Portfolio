@@ -108,7 +108,7 @@ textarea {
 
 .navbar__in--navigation-list__link {
   color: var(--primaryWhite);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   text-transform: uppercase;
   position: relative;
   z-index: 1;

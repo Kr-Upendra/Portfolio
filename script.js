@@ -4,18 +4,32 @@ const navigation = document.getElementById("navigation");
 const form = document.querySelector(".form");
 const overlay = document.querySelector(".overlay");
 
+const showNavbar = () => {
+  navigation.style.left = "0";
+  menuIcon.setAttribute("aria-hidden", "false");
+  overlay.style.display = "block";
+};
+
+const hideNavbar = () => {
+  navigation.style.left = "-100%";
+  menuIcon.setAttribute("aria-hidden", "true");
+  overlay.style.display = "none";
+};
+
 menuIcon.addEventListener("click", () => {
   const menuValue = menuIcon.getAttribute("aria-hidden");
   if (menuValue === "true") {
-    navigation.style.left = "0";
-    menuIcon.setAttribute("aria-hidden", "false");
-    overlay.style.display = "block";
+    showNavbar();
   } else {
-    navigation.style.left = "-100%";
-    menuIcon.setAttribute("aria-hidden", "true");
-    overlay.style.display = "none";
+    hideNavbar();
   }
 });
+
+const hideNavOnOutTouch = () => {
+  overlay.addEventListener("click", hideNavbar);
+};
+
+hideNavOnOutTouch();
 
 window.addEventListener("scroll", () => {
   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)
@@ -29,13 +43,3 @@ form.addEventListener("submit", (e) => {
     "This functionality is not implemented Yet,\nPlease use email instead! Thanks."
   );
 });
-
-const hideNavOnOutTouch = () => {
-  overlay.addEventListener("click", () => {
-    navigation.style.left = "-100%";
-    menuIcon.setAttribute("aria-hidden", "true");
-    overlay.style.display = "none";
-  });
-};
-
-hideNavOnOutTouch();
