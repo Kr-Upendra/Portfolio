@@ -3,6 +3,7 @@ const navbar = document.querySelector(".navbar__in");
 const navigation = document.getElementById("navigation");
 const form = document.querySelector(".form");
 const overlay = document.querySelector(".overlay");
+const topBtn = document.querySelector(".goto__top");
 
 const showNavbar = () => {
   navigation.style.left = "0";
@@ -42,4 +43,23 @@ form.addEventListener("submit", (e) => {
   alert(
     "This functionality is not implemented Yet,\nPlease use email instead! Thanks."
   );
+});
+
+const showReachTopButton = () => {
+  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400)
+    topBtn.style.display = "block";
+  else topBtn.style.display = "none";
+};
+
+// const reachTop = () => {
+
+// };
+
+window.onscroll = function () {
+  showReachTopButton();
+};
+
+topBtn.addEventListener("click", () => {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 });
