@@ -64,6 +64,21 @@ textarea {
   color: var(--primaryWhite);
 }
 
+/* CUSTOM SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--primaryDark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--fullWhite);
+  border-radius: 10px;
+}
+
 /* NAVBAR STYLE */
 
 .navbar {
