@@ -51,10 +51,6 @@ const showReachTopButton = () => {
   else topBtn.style.display = "none";
 };
 
-// const reachTop = () => {
-
-// };
-
 window.onscroll = function () {
   showReachTopButton();
 };
