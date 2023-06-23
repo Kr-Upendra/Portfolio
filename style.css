@@ -13,6 +13,13 @@
     rgba(54, 21, 68, 0.863),
     rgba(54, 1, 61, 0.863)
   );
+  --fixedBackgroundImage: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.808),
+      rgba(0, 0, 0, 0.692)
+    ),
+    url("/img/about.png");
+  --sectionBlurAmount: blur(3px);
   --fullWhite: #fff;
   --primaryWhite: #c2bfbf;
   --primaryBlack: #000007;
@@ -20,6 +27,11 @@
   --sqauresColor: #28003567;
   --circleColor: #2f003d70;
   --veryLightWhite: #5a5959;
+  --contectSectionBG: rgba(0, 0, 0, 0.123);
+  --projectSectionBG: rgba(0, 158, 13, 0.041);
+  --skillSectionBG: rgba(0, 0, 0, 0.075);
+  --aboutSectionBG: rgba(103, 0, 134, 0.075);
+  --headerSectionBG: rgba(0, 0, 0, 0.075);
 }
 
 * {
@@ -37,7 +49,7 @@ body {
   font-family: var(--fontFamily);
   font-size: 16px;
   width: 100%;
-  min-width: 380px;
+  min-width: 400px;
   min-height: 100vh;
   position: relative;
 }
@@ -77,6 +89,20 @@ textarea {
 ::-webkit-scrollbar-thumb {
   background: var(--fullWhite);
   border-radius: 10px;
+}
+
+/* FIXED ELEMENT */
+
+.fixedElement {
+  width: 100%;
+  height: 100vh;
+  min-height: 115vh;
+  background-image: var(--fixedBackgroundImage);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  position: fixed;
+  z-index: -1;
 }
 
 /* NAVBAR STYLE */
@@ -190,12 +216,8 @@ textarea {
 /* HEADER SECTION STYLE */
 
 .header {
-  background-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.808),
-      rgba(0, 0, 0, 0.692)
-    ),
-    url("/img/MyImage.png");
+  background-color: var(--headerSectionBG);
+  backdrop-filter: var(--sectionBlurAmount);
   width: 100%;
   height: 100vh;
   background-position: center;
@@ -315,17 +337,8 @@ textarea {
 }
 
 .about__section {
-  background-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.808),
-      rgba(0, 0, 0, 0.63),
-      rgba(0, 0, 0, 0.329)
-    ),
-    url("/img/about.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  backdrop-filter: blur(12px);
+  background-color: var(--aboutSectionBG);
+  backdrop-filter: var(--sectionBlurAmount);
 }
 
 .section__in {
@@ -437,7 +450,8 @@ textarea {
 /* SKILL SECTION MAIN STYLING */
 
 .skill__section {
-  background-image: linear-gradient(to right, #150025e3, #18031d, #0e000e);
+  background-color: rgba(0, 0, 0, 0.075);
+  backdrop-filter: var(--sectionBlurAmount);
 }
 
 .skill__container {
@@ -539,16 +553,8 @@ textarea {
 /* PROJECT SECTION STYLE */
 
 .project__section {
-  background-image: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.884) 0%,
-      rgba(0, 0, 0, 0.884) 49%,
-      rgba(0, 0, 0, 0.925) 100%
-    ),
-    url("/img/laptop.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: var(--projectSectionBG);
+  backdrop-filter: var(--sectionBlurAmount);
 }
 
 /* MAIN PROJECT SECTION */
@@ -636,11 +642,8 @@ textarea {
 /* CONTACT SECTION STYLE */
 
 .contact__section {
-  background-image: linear-gradient(to right, #0a030fda, #0d030fd8, #0e000e),
-    url("/img/location.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: var(--contectSectionBG);
+  backdrop-filter: var(--sectionBlurAmount);
 }
 
 .contact__frombox {
@@ -771,7 +774,7 @@ textarea {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--fullWhite);
-  border-radius: 50%;
+  border-radius: 3rem;
   background-color: var(--primaryLight);
   cursor: pointer;
   z-index: 100;
@@ -895,8 +898,8 @@ textarea {
   }
 
   .goto__top {
-    bottom: 5%;
-    right: 3%;
+    bottom: 4%;
+    right: 5%;
   }
 }
 
