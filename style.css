@@ -341,7 +341,6 @@ textarea {
 .about__section {
   background-color: var(--aboutSectionBG);
   backdrop-filter: var(--sectionBlurAmount);
-  display: none;
 }
 
 .section__in {
@@ -455,7 +454,6 @@ textarea {
 .skill__section {
   background-color: rgba(0, 0, 0, 0.075);
   backdrop-filter: var(--sectionBlurAmount);
-  display: none;
 }
 
 .skill__container {
