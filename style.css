@@ -32,6 +32,8 @@
   --skillSectionBG: rgba(0, 0, 0, 0.075);
   --aboutSectionBG: rgba(103, 0, 134, 0.075);
   --headerSectionBG: rgba(0, 0, 0, 0.075);
+  --onePixelLS: 1px;
+  --boxShadow: rgba(0, 0, 0, 0.2) 0 5px 10px 0;
 }
 
 * {
@@ -339,6 +341,7 @@ textarea {
 .about__section {
   background-color: var(--aboutSectionBG);
   backdrop-filter: var(--sectionBlurAmount);
+  display: none;
 }
 
 .section__in {
@@ -452,6 +455,7 @@ textarea {
 .skill__section {
   background-color: rgba(0, 0, 0, 0.075);
   backdrop-filter: var(--sectionBlurAmount);
+  display: none;
 }
 
 .skill__container {
@@ -558,85 +562,97 @@ textarea {
 }
 
 /* MAIN PROJECT SECTION */
+
 .project__in {
-  padding: 0 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  padding: 1rem 3rem;
 }
 
-.project__in--details {
-  display: flex;
-  gap: 2rem 5rem;
-  margin-bottom: 3rem;
-}
-
-.project__in--details:last-child {
-  margin-bottom: 0;
-}
-
-.project__in--details-img,
-.project__in--details-about {
-  width: 100%;
-}
-
-.project__in--details-img {
-  object-fit: fill;
-  text-align: center;
-}
-
-.project__in--details-img img {
-  width: 80%;
-  box-shadow: rgba(244, 201, 255, 0.123) 0 15px 30px 0;
+.project__card {
+  max-width: 320px;
+  min-width: 300px;
+  margin: 0 auto;
   border-radius: 0.5rem;
-  user-select: none;
+  background-color: rgba(233, 207, 255, 0.11);
+  backdrop-filter: blur(3px);
+  padding: 1rem 0.5rem;
+  box-shadow: rgba(195, 0, 255, 0.151) 0 5px 10px 0;
+  position: relative;
 }
 
-.project__in--details-img img:hover {
-  filter: grayscale(90%);
-}
-
-.project__in--details-about {
+.el__zoom {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
+  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  margin-top: -2rem;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.397);
+  display: none;
+  transition: all 0.4s ease;
 }
 
-.project__in--details-about__title,
-.project__in--details-about__shortdes,
-.project__in--details-about__visitbtn {
-  margin: 1rem 0 1rem 2rem;
-}
-
-.project__in--details-about__title h3 {
+.el__plus {
+  font-size: 3rem;
   color: var(--fullWhite);
-  font-size: 1.65rem;
-  font-weight: 400;
-  line-height: 1;
+  cursor: pointer;
 }
 
-.project__in--details-about__shortdes p {
-  color: var(--primaryWhite);
-  font-size: 1rem;
-  font-weight: 300;
-  letter-spacing: 1px;
+.project__card:hover .el__zoom {
+  display: flex;
+}
+
+.project__card--img {
+  width: fit-content;
   margin-bottom: 1rem;
 }
 
-.project__in--details-about__visitbtn a {
-  color: var(--primaryWhite);
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 0.85rem 1.5rem;
-  background-color: var(--primaryColor);
-  border-radius: 3rem;
-  border: 2px solid transparent;
-  transition: border 0.45s ease-in-out, background-color 0.45s ease-in-out;
+.project__card--img img {
+  border-radius: 0.5rem;
+  width: 100%;
+  box-shadow: var(--boxShadow);
 }
 
-.project__in--details-about__visitbtn a:hover {
+.project__card--title {
+  padding: 0 0 0 0.25rem;
+}
+
+.project__card--title h3 {
+  font-size: 1rem;
+  color: var(--fullWhite);
+  letter-spacing: var(--onePixelLS);
+}
+
+.project__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 197, 131, 0.082);
+  padding: 1rem 1rem;
+  height: 235px;
+}
+
+.el__visit--project {
+  padding: 0.7rem 1rem;
+  text-transform: uppercase;
+  border-radius: 3rem;
+  border: 2px solid transparent;
+  color: var(--primaryWhite);
+  background-color: var(--primaryColor);
+  font-weight: 500;
+  font-size: 1.15rem;
+  transition: letter-spacing 0.45s ease-in-out,
+    background-color 0.45s ease-in-out, border 0.45s ease-in-out;
+}
+
+.el__visit--project:hover {
+  letter-spacing: 2px;
   background-color: var(--primaryDark);
-  border: 2px solid var(--fullWhite);
+  border: 2px solid var(--primaryWhite);
 }
 
 /* CONTACT SECTION STYLE */
@@ -783,6 +799,13 @@ textarea {
 
 /* MEDIA QUERY */
 
+@media (max-width: 1200px) {
+  .project__in {
+    padding: 1rem !important;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 900px) {
   .navbar__in--navigation {
     position: absolute;
@@ -828,10 +851,6 @@ textarea {
     margin-bottom: 2rem;
   }
 
-  .project__in--details {
-    flex-direction: column;
-  }
-
   .contact__frombox--form {
     width: 55%;
   }
@@ -839,6 +858,14 @@ textarea {
   .form__box {
     flex-direction: column;
     gap: 0;
+  }
+
+  .project {
+    padding: 1rem;
+  }
+
+  .project__in {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -883,10 +910,7 @@ textarea {
 
   .project__in {
     padding: 1rem 0.5rem;
-  }
-
-  .project__in--details-about {
-    margin-top: 0;
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .contact__frombox--form {
