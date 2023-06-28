@@ -14,12 +14,10 @@
     rgba(54, 1, 61, 0.863)
   );
   --fixedBackgroundImage: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.808),
-      rgba(0, 0, 0, 0.692)
+      rgba(0, 0, 0, 0.308),
+      rgba(0, 0, 0, 0.829)
     ),
     url("/img/about.png");
-  --sectionBlurAmount: blur(3px);
   --fullWhite: #fff;
   --primaryWhite: #c2bfbf;
   --primaryBlack: #000007;
@@ -219,7 +217,6 @@ textarea {
 
 .header {
   background-color: var(--headerSectionBG);
-  backdrop-filter: var(--sectionBlurAmount);
   width: 100%;
   height: 100vh;
   background-position: center;
@@ -340,7 +337,6 @@ textarea {
 
 .about__section {
   background-color: var(--aboutSectionBG);
-  backdrop-filter: var(--sectionBlurAmount);
 }
 
 .section__in {
@@ -453,7 +449,6 @@ textarea {
 
 .skill__section {
   background-color: rgba(0, 0, 0, 0.075);
-  backdrop-filter: var(--sectionBlurAmount);
 }
 
 .skill__container {
@@ -485,7 +480,7 @@ textarea {
 }
 
 .skill__names {
-  --lightWhite: rgba(255, 255, 255, 0.404);
+  --lightWhite: rgba(255, 255, 255, 0.438);
   border: 2px solid var(--lightWhite);
   width: 80px;
   aspect-ratio: 1;
@@ -493,7 +488,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--lightWhite);
+  color: var(--fullWhite);
   text-transform: uppercase;
   font-weight: 500;
   position: relative;
@@ -556,7 +551,6 @@ textarea {
 
 .project__section {
   background-color: var(--projectSectionBG);
-  backdrop-filter: var(--sectionBlurAmount);
 }
 
 /* MAIN PROJECT SECTION */
@@ -657,7 +651,6 @@ textarea {
 
 .contact__section {
   background-color: var(--contectSectionBG);
-  backdrop-filter: var(--sectionBlurAmount);
 }
 
 .contact__frombox {
