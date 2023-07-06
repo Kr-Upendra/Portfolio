@@ -416,7 +416,7 @@ textarea {
   cursor: default;
 }
 .skill__names:hover {
-  color: var(--primaryColor);
+  color: var(--fullWhite);
   font-weight: 600;
 }
 .skill__names::after {
@@ -429,7 +429,7 @@ textarea {
   border-radius: 50%;
   width: 0;
   height: 0;
-  background-color: var(--fullWhite);
+  background-image: linear-gradient(rgb(116, 227, 255), rgb(145, 20, 156));
   transition: height 0.5s ease-in-out, width 0.5s ease-in-out,
     border 0.5s ease-in-out;
 }
