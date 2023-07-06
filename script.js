@@ -4,6 +4,14 @@ const navigation = document.getElementById("navigation");
 const form = document.querySelector(".form");
 const overlay = document.querySelector(".overlay");
 const topBtn = document.querySelector(".goto__top");
+const showProjectBox = document.querySelector(".showProject");
+const zoomBtns = document.querySelectorAll(".el__plus");
+const projectCloseBtn = document.querySelector(".showproject__closebtn");
+const projectCards = document.querySelectorAll(".project__card");
+const showProjectImage = document.querySelector(".project__image--img");
+const showProjectTitle = document.querySelector(
+  ".project__image--titlebox-title"
+);
 
 const showNavbar = () => {
   navigation.style.left = "0";
@@ -59,3 +67,31 @@ topBtn.addEventListener("click", () => {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 });
+
+const getImageUrlAndProjectTitle = (projectCards) => {
+  const imageTag = projectCards.querySelector(".el__projectimage");
+  const titleTag = projectCards.querySelector(".el__projecttitle");
+  const imageUrl = imageTag.getAttribute("src");
+  const projectTitle = titleTag.textContent;
+  return { projectTitle, imageUrl };
+};
+
+const showProject = () => {
+  for (let i = 0; i < zoomBtns.length; i++) {
+    zoomBtns[i].addEventListener("click", () => {
+      const project = getImageUrlAndProjectTitle(projectCards[i]);
+      showProjectBox.style.display = "flex";
+      showProjectImage.setAttribute("src", `${project.imageUrl}`);
+      showProjectTitle.textContent = project.projectTitle;
+    });
+  }
+};
+
+const hideProject = () => {
+  projectCloseBtn.addEventListener("click", () => {
+    showProjectBox.style.display = "none";
+  });
+};
+
+showProject();
+hideProject();

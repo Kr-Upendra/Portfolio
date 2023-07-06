@@ -652,6 +652,122 @@ textarea {
   z-index: 100;
   display: none;
 }
+
+/* SHOW PROJECT */
+
+.showProject {
+  position: fixed;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.651);
+  display: none;
+}
+
+.project__container {
+  width: 70%;
+  border-radius: 0.5rem;
+  height: 90%;
+  position: relative;
+}
+
+.project__image {
+  width: fit-content;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.project__image img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.project__image--titlebox {
+  position: absolute;
+  bottom: 0.5%;
+  left: 0;
+  width: 100%;
+  padding: 1.1rem 0;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.418);
+  backdrop-filter: blur(3px);
+  display: none;
+}
+
+.project__image--titlebox-title {
+  padding-left: 2rem;
+  color: var(--fullWhite);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
+
+.project__image:hover .project__image--titlebox {
+  display: block;
+}
+
+.project__visitbtns {
+  text-align: center;
+  margin: 1.5rem 0 0 0;
+}
+
+.project__visitbtns--repo {
+  padding: 0.65rem 2rem;
+  border-radius: 3rem;
+  border: 2px solid transparent;
+  background-color: var(--primaryColor);
+  color: var(--primaryWhite);
+  transition: letter-spacing 0.45s ease-in-out,
+    background-color 0.45s ease-in-out, border 0.45s ease-in-out;
+  text-transform: uppercase;
+}
+
+.project__visitbtns--repo:hover {
+  letter-spacing: 7px;
+  background-color: var(--primaryDark);
+  border: 2px solid var(--primaryWhite);
+}
+
+.showproject__closebtn {
+  position: absolute;
+  top: 0%;
+  right: -4%;
+  cursor: pointer;
+  width: 24px;
+  aspect-ratio: 1;
+  border-radius: 3rem;
+  padding: 3px;
+  background-color: rgba(0, 0, 0, 0.603);
+  transition: transform 0.5s ease;
+}
+
+.showproject__closebtn:hover {
+  transform: rotate(1turn);
+}
+
+.showproject__closebtn--bar {
+  width: 80%;
+  height: 3px;
+  background-color: var(--fullWhite);
+  transform-origin: 100%;
+  border-radius: 3rem;
+}
+
+.showproject__closebtn--bar:first-child {
+  margin-bottom: 10px;
+  margin-top: 3px;
+  transform: rotate(-44deg);
+}
+
+.showproject__closebtn--bar:last-child {
+  transform: rotate(44deg);
+}
+
 @media (max-width: 1200px) {
   .project__in {
     padding: 1rem !important;

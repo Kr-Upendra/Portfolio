@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Upendra Kumar | Learner | Student</title>
     <link rel="stylesheet" href="styles/style.css" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
@@ -185,10 +186,14 @@
         <div class="project__in">
           <div class="project__card">
             <div class="project__card--img">
-              <img src="img/project1.png" alt="Project 1" />
+              <img
+                class="el__projectimage"
+                src="img/project1.png"
+                alt="Project 1"
+              />
             </div>
             <div class="project__card--title">
-              <h3>QR Generator</h3>
+              <h3 class="el__projecttitle">QR Generator</h3>
             </div>
             <div class="el__zoom">
               <span class="el__plus">+</span>
@@ -197,10 +202,14 @@
 
           <div class="project__card">
             <div class="project__card--img">
-              <img src="img/project2.png" alt="Project 1" />
+              <img
+                class="el__projectimage"
+                src="img/project2.png"
+                alt="Project 1"
+              />
             </div>
             <div class="project__card--title">
-              <h3>Tip Calculator</h3>
+              <h3 class="el__projecttitle">Tip Calculator</h3>
             </div>
             <div class="el__zoom">
               <span class="el__plus">+</span>
@@ -209,10 +218,14 @@
 
           <div class="project__card">
             <div class="project__card--img">
-              <img src="img/project3.png" alt="Project 1" />
+              <img
+                class="el__projectimage"
+                src="img/project3.png"
+                alt="Project 1"
+              />
             </div>
             <div class="project__card--title">
-              <h3>Random Password Generator</h3>
+              <h3 class="el__projecttitle">Random Password Generator</h3>
             </div>
             <div class="el__zoom">
               <span class="el__plus">+</span>
@@ -221,10 +234,14 @@
 
           <div class="project__card">
             <div class="project__card--img">
-              <img src="img/project4.png" alt="Project 1" />
+              <img
+                class="el__projectimage"
+                src="img/project4.png"
+                alt="Project 1"
+              />
             </div>
             <div class="project__card--title">
-              <h3>100 JS Projects</h3>
+              <h3 class="el__projecttitle">100 JS Projects</h3>
             </div>
             <div class="el__zoom">
               <span class="el__plus">+</span>
@@ -233,10 +250,14 @@
 
           <div class="project__card">
             <div class="project__card--img">
-              <img src="img/project_15.png" alt="Project 1" />
+              <img
+                class="el__projectimage"
+                src="img/project_15.png"
+                alt="Project 1"
+              />
             </div>
             <div class="project__card--title">
-              <h3>Weather App</h3>
+              <h3 class="el__projecttitle">Weather App</h3>
             </div>
             <div class="el__zoom">
               <span class="el__plus">+</span>
@@ -318,6 +339,23 @@
     </section>
     <div class="overlay"></div>
     <div class="goto__top">&#8593;</div>
+    <div class="showProject">
+      <div class="project__container">
+        <div class="project__image">
+          <img class="project__image--img" src="" alt="Project 1" />
+          <div class="project__image--titlebox">
+            <h3 class="project__image--titlebox-title"></h3>
+          </div>
+        </div>
+        <div class="project__visitbtns">
+          <a href="#" class="project__visitbtns--repo">Visit</a>
+        </div>
+        <div class="showproject__closebtn">
+          <div class="showproject__closebtn--bar"></div>
+          <div class="showproject__closebtn--bar"></div>
+        </div>
+      </div>
+    </div>
   </body>
   <script src="script.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
