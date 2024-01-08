@@ -12,6 +12,13 @@ const showProjectImage = document.querySelector(".project__image--img");
 const showProjectTitle = document.querySelector(
   ".project__image--titlebox-title"
 );
+const closeModel = document.querySelector("#close-visit");
+
+function isLoaded() {
+  window.addEventListener("load", () => {
+    document.querySelector(".showModel").style.display = "flex";
+  });
+}
 
 const showNavbar = () => {
   navigation.style.left = "0";
@@ -93,5 +100,13 @@ const hideProject = () => {
   });
 };
 
+const hideShowModel = () => {
+  closeModel.addEventListener("click", () => {
+    document.querySelector(".showModel").style.display = "none";
+  });
+};
+
 showProject();
 hideProject();
+hideShowModel();
+isLoaded();
